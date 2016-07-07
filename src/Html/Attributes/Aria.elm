@@ -47,7 +47,7 @@ boolAttribute name val =
 {-| Identifies the currently active descendant of a composite widget.
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-activedescendant).
 
-    div [ ariaActivedescendant "id" ] [ text "Hello aria!" ]
+    div [ ariaActiveDescendant "id" ] [ text "Hello aria!" ]
 -}
 ariaActiveDescendant : String -> Attribute msg
 ariaActiveDescendant =
