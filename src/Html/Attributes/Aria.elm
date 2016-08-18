@@ -124,6 +124,17 @@ ariaLabelledby =
     attribute "aria-labelledby"
 
 
+{-| Indicates that an element will be updated, and describes the types of updates the user agents,
+assistive technologies, and user can expect from the live region.
+See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-live).
+
+    input [ ariaLive "assertive" ] []
+-}
+ariaLive : String -> Attribute msg
+ariaLive =
+    attribute "aria-live"
+
+
 {-| Indicates that the element is not editable, but is otherwise operable.
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-readonly).
 
