@@ -8,6 +8,7 @@ module Html.Attributes.Aria
         , ariaHidden
         , ariaLabel
         , ariaLabelledby
+        , ariaLive
         , ariaReadonly
         , ariaRequired
         , ariaSelected
@@ -28,6 +29,7 @@ module Html.Attributes.Aria
 @docs ariaHidden
 @docs ariaLabel
 @docs ariaLabelledby
+@docs ariaLive
 @docs ariaReadonly
 @docs ariaRequired
 @docs ariaSelected
