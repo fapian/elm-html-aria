@@ -9,6 +9,7 @@ module Html.Attributes.Aria
         , ariaLabel
         , ariaLabelledby
         , ariaLive
+        , ariaPressed
         , ariaReadonly
         , ariaRequired
         , ariaSelected
@@ -30,6 +31,7 @@ module Html.Attributes.Aria
 @docs ariaLabel
 @docs ariaLabelledby
 @docs ariaLive
+@docs ariaPressed
 @docs ariaReadonly
 @docs ariaRequired
 @docs ariaSelected
@@ -135,6 +137,15 @@ See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#ar
 ariaLive : String -> Attribute msg
 ariaLive =
     attribute "aria-live"
+
+
+{-| Indicates the current "pressed" state of toggle buttons.
+See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-pressed).
+    button [ ariaPressed True ] [ text "Submit" ]
+-}
+ariaPressed : Bool -> Attribute msg
+ariaPressed =
+    boolAttribute "aria-pressed"
 
 
 {-| Indicates that the element is not editable, but is otherwise operable.
