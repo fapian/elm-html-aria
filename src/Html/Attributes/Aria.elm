@@ -141,6 +141,7 @@ ariaLive =
 
 {-| Indicates the current "pressed" state of toggle buttons.
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-pressed).
+
     button [ ariaPressed True ] [ text "Submit" ]
 -}
 ariaPressed : Bool -> Attribute msg
