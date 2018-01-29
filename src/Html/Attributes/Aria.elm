@@ -2,6 +2,7 @@ module Html.Attributes.Aria
     exposing
         ( ariaActiveDescendant
         , ariaChecked
+        , ariaControls
         , ariaDescribedby
         , ariaDisabled
         , ariaExpanded
@@ -29,6 +30,7 @@ module Html.Attributes.Aria
 
 @docs ariaActiveDescendant
 @docs ariaChecked
+@docs ariaControls
 @docs ariaDescribedby
 @docs ariaDisabled
 @docs ariaExpanded
@@ -74,6 +76,17 @@ See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#ar
 ariaChecked : String -> Attribute msg
 ariaChecked =
     attribute "aria-checked"
+
+
+{-| Identifies the element (or elements) whose contents or presence are controlled by the current element.
+See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls).
+
+    div [ ariaControls "dropdown-menu" ] [ text "Hello aria!" ]
+
+-}
+ariaControls : String -> Attribute msg
+ariaControls =
+    attribute "aria-controls"
 
 
 {-| Identifies the element (or elements) that describes the object.
