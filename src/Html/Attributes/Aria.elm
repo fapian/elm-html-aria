@@ -18,10 +18,14 @@ module Html.Attributes.Aria
 
 {-| Additional attributes for html
 
+
 # Aria role
+
 @docs role
 
+
 # Aria Attributes
+
 @docs ariaActiveDescendant
 @docs ariaChecked
 @docs ariaDescribedby
@@ -52,6 +56,7 @@ boolAttribute name val =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-activedescendant).
 
     div [ ariaActiveDescendant "id" ] [ text "Hello aria!" ]
+
 -}
 ariaActiveDescendant : String -> Attribute msg
 ariaActiveDescendant =
@@ -62,6 +67,7 @@ ariaActiveDescendant =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked).
 
     div [ ariaChecked "true" ] [ text "Hello aria!" ]
+
 -}
 ariaChecked : String -> Attribute msg
 ariaChecked =
@@ -72,6 +78,7 @@ ariaChecked =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-describedby).
 
     div [ ariaDescribedby "id" ] [ text "Hello aria!" ]
+
 -}
 ariaDescribedby : String -> Attribute msg
 ariaDescribedby =
@@ -82,6 +89,7 @@ ariaDescribedby =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled).
 
     div [ ariaDisabled True ] [ text "Hello aria!" ]
+
 -}
 ariaDisabled : Bool -> Attribute msg
 ariaDisabled =
@@ -92,6 +100,7 @@ ariaDisabled =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded).
 
     div [ ariaExpanded "true" ] [ text "Hello aria!" ]
+
 -}
 ariaExpanded : String -> Attribute msg
 ariaExpanded =
@@ -102,6 +111,7 @@ ariaExpanded =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden).
 
     div [ ariaHidden True ] [ text "Hello aria!" ]
+
 -}
 ariaHidden : Bool -> Attribute msg
 ariaHidden =
@@ -112,6 +122,7 @@ ariaHidden =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-label).
 
     div [ ariaLabel "label" ] [ text "Hello aria!" ]
+
 -}
 ariaLabel : String -> Attribute msg
 ariaLabel =
@@ -122,6 +133,7 @@ ariaLabel =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby).
 
     div [ ariaLabelledby "id" ] [ text "Hello aria!" ]
+
 -}
 ariaLabelledby : String -> Attribute msg
 ariaLabelledby =
@@ -133,6 +145,7 @@ assistive technologies, and user can expect from the live region.
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-live).
 
     input [ ariaLive "assertive" ] []
+
 -}
 ariaLive : String -> Attribute msg
 ariaLive =
@@ -143,6 +156,7 @@ ariaLive =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-pressed).
 
     button [ ariaPressed True ] [ text "Submit" ]
+
 -}
 ariaPressed : Bool -> Attribute msg
 ariaPressed =
@@ -153,6 +167,7 @@ ariaPressed =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-readonly).
 
     div [ ariaReadonly True ] [ text "Hello aria!" ]
+
 -}
 ariaReadonly : Bool -> Attribute msg
 ariaReadonly =
@@ -163,6 +178,7 @@ ariaReadonly =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-required).
 
     div [ ariaRequired True ] [ text "Hello aria!" ]
+
 -}
 ariaRequired : Bool -> Attribute msg
 ariaRequired =
@@ -173,6 +189,7 @@ ariaRequired =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-selected).
 
     div [ ariaSelected "true" ] [ text "Hello aria!" ]
+
 -}
 ariaSelected : String -> Attribute msg
 ariaSelected =
@@ -183,6 +200,7 @@ ariaSelected =
 See the [official specs](https://www.w3.org/TR/role-attribute).
 
     div [ role "button" ] [ text "Submit" ]
+
 -}
 role : String -> Attribute msg
 role =
