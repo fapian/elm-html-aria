@@ -5,6 +5,7 @@ module Html.Attributes.Aria
         , ariaDescribedby
         , ariaDisabled
         , ariaExpanded
+        , ariaHasPopup
         , ariaHidden
         , ariaLabel
         , ariaLabelledby
@@ -31,6 +32,7 @@ module Html.Attributes.Aria
 @docs ariaDescribedby
 @docs ariaDisabled
 @docs ariaExpanded
+@docs ariaHasPopup
 @docs ariaHidden
 @docs ariaLabel
 @docs ariaLabelledby
@@ -105,6 +107,17 @@ See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#ar
 ariaExpanded : String -> Attribute msg
 ariaExpanded =
     attribute "aria-expanded"
+
+
+{-| Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element.
+See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-haspopup).
+
+    div [ ariaHasPopup "menu" ] [ text "Hello aria!" ]
+
+-}
+ariaHasPopup : String -> Attribute msg
+ariaHasPopup =
+    attribute "aria-haspopup"
 
 
 {-| Indicates that the element and all of its descendants are not visible or perceivable to any user as implemented by the author.
