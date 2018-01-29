@@ -1,6 +1,6 @@
 {
     "version": "1.2.2",
-    "summary": "Aria attributes for elm",
+    "summary": "Aria attributes for Elm",
     "repository": "https://github.com/fapian/elm-html-aria.git",
     "license": "BSD3",
     "source-directories": [
