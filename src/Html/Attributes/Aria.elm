@@ -2,9 +2,11 @@ module Html.Attributes.Aria
     exposing
         ( ariaActiveDescendant
         , ariaChecked
+        , ariaControls
         , ariaDescribedby
         , ariaDisabled
         , ariaExpanded
+        , ariaHasPopup
         , ariaHidden
         , ariaLabel
         , ariaLabelledby
@@ -18,15 +20,21 @@ module Html.Attributes.Aria
 
 {-| Additional attributes for html
 
+
 # Aria role
+
 @docs role
 
+
 # Aria Attributes
+
 @docs ariaActiveDescendant
 @docs ariaChecked
+@docs ariaControls
 @docs ariaDescribedby
 @docs ariaDisabled
 @docs ariaExpanded
+@docs ariaHasPopup
 @docs ariaHidden
 @docs ariaLabel
 @docs ariaLabelledby
@@ -52,6 +60,7 @@ boolAttribute name val =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-activedescendant).
 
     div [ ariaActiveDescendant "id" ] [ text "Hello aria!" ]
+
 -}
 ariaActiveDescendant : String -> Attribute msg
 ariaActiveDescendant =
@@ -62,16 +71,29 @@ ariaActiveDescendant =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked).
 
     div [ ariaChecked "true" ] [ text "Hello aria!" ]
+
 -}
 ariaChecked : String -> Attribute msg
 ariaChecked =
     attribute "aria-checked"
 
 
+{-| Identifies the element (or elements) whose contents or presence are controlled by the current element.
+See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls).
+
+    div [ ariaControls "dropdown-menu" ] [ text "Hello aria!" ]
+
+-}
+ariaControls : String -> Attribute msg
+ariaControls =
+    attribute "aria-controls"
+
+
 {-| Identifies the element (or elements) that describes the object.
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-describedby).
 
     div [ ariaDescribedby "id" ] [ text "Hello aria!" ]
+
 -}
 ariaDescribedby : String -> Attribute msg
 ariaDescribedby =
@@ -82,6 +104,7 @@ ariaDescribedby =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled).
 
     div [ ariaDisabled True ] [ text "Hello aria!" ]
+
 -}
 ariaDisabled : Bool -> Attribute msg
 ariaDisabled =
@@ -92,16 +115,29 @@ ariaDisabled =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded).
 
     div [ ariaExpanded "true" ] [ text "Hello aria!" ]
+
 -}
 ariaExpanded : String -> Attribute msg
 ariaExpanded =
     attribute "aria-expanded"
 
 
+{-| Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element.
+See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-haspopup).
+
+    div [ ariaHasPopup "menu" ] [ text "Hello aria!" ]
+
+-}
+ariaHasPopup : String -> Attribute msg
+ariaHasPopup =
+    attribute "aria-haspopup"
+
+
 {-| Indicates that the element and all of its descendants are not visible or perceivable to any user as implemented by the author.
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden).
 
     div [ ariaHidden True ] [ text "Hello aria!" ]
+
 -}
 ariaHidden : Bool -> Attribute msg
 ariaHidden =
@@ -112,6 +148,7 @@ ariaHidden =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-label).
 
     div [ ariaLabel "label" ] [ text "Hello aria!" ]
+
 -}
 ariaLabel : String -> Attribute msg
 ariaLabel =
@@ -122,6 +159,7 @@ ariaLabel =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby).
 
     div [ ariaLabelledby "id" ] [ text "Hello aria!" ]
+
 -}
 ariaLabelledby : String -> Attribute msg
 ariaLabelledby =
@@ -133,6 +171,7 @@ assistive technologies, and user can expect from the live region.
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-live).
 
     input [ ariaLive "assertive" ] []
+
 -}
 ariaLive : String -> Attribute msg
 ariaLive =
@@ -143,6 +182,7 @@ ariaLive =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-pressed).
 
     button [ ariaPressed True ] [ text "Submit" ]
+
 -}
 ariaPressed : Bool -> Attribute msg
 ariaPressed =
@@ -153,6 +193,7 @@ ariaPressed =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-readonly).
 
     div [ ariaReadonly True ] [ text "Hello aria!" ]
+
 -}
 ariaReadonly : Bool -> Attribute msg
 ariaReadonly =
@@ -163,6 +204,7 @@ ariaReadonly =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-required).
 
     div [ ariaRequired True ] [ text "Hello aria!" ]
+
 -}
 ariaRequired : Bool -> Attribute msg
 ariaRequired =
@@ -173,6 +215,7 @@ ariaRequired =
 See the [official specs](https://www.w3.org/TR/wai-aria/states_and_properties#aria-selected).
 
     div [ ariaSelected "true" ] [ text "Hello aria!" ]
+
 -}
 ariaSelected : String -> Attribute msg
 ariaSelected =
@@ -183,6 +226,7 @@ ariaSelected =
 See the [official specs](https://www.w3.org/TR/role-attribute).
 
     div [ role "button" ] [ text "Submit" ]
+
 -}
 role : String -> Attribute msg
 role =

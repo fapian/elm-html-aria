@@ -1,4 +1,4 @@
-# Aria attributes for elm
+# Aria attributes for Elm
 
 Collection of some aria attributes. Examples can be found within the
 documentation of the package.
