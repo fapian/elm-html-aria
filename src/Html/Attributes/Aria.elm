@@ -15,6 +15,9 @@ module Html.Attributes.Aria
         , ariaReadonly
         , ariaRequired
         , ariaSelected
+        , ariaValueMax
+        , ariaValueMin
+        , ariaValueNow
         , role
         )
 
@@ -43,6 +46,9 @@ module Html.Attributes.Aria
 @docs ariaReadonly
 @docs ariaRequired
 @docs ariaSelected
+@docs ariaValueMax
+@docs ariaValueMin
+@docs ariaValueNow
 
 -}
 
@@ -54,6 +60,10 @@ import Json.Encode as JE
 boolAttribute : String -> Bool -> Attribute msg
 boolAttribute name val =
     attribute name (JE.encode 0 <| JE.bool val)
+
+floatAttribute : String -> Float -> Attribute msg
+floatAttribute name val =
+    attribute name (toString val)
 
 
 {-| Identifies the currently active descendant of a composite widget.
@@ -220,6 +230,39 @@ See the [official specs](https://www.w3.org/TR/wai-aria-1.1/#aria-selected).
 ariaSelected : String -> Attribute msg
 ariaSelected =
     attribute "aria-selected"
+
+
+{-| Defines the maximum allowed value for a range widget.
+See the [official specs](https://www.w3.org/TR/wai-aria-1.1/#aria-valuemax).
+
+    div [ ariaValueMax 10, role "progressbar" ] []
+
+-}
+ariaValueMax : Float -> Attribute msg
+ariaValueMax =
+    floatAttribute "aria-valuemax"
+
+
+{-| Defines the minimum allowed value for a range widget.
+See the [official specs](https://www.w3.org/TR/wai-aria-1.1/#aria-valuemin).
+
+    div [ ariaValueMin 1, role "progressbar" ] []
+
+-}
+ariaValueMin : Float -> Attribute msg
+ariaValueMin =
+    floatAttribute "aria-valuemin"
+
+
+{-| Defines the current value for a range widget.
+See the [official specs](https://www.w3.org/TR/wai-aria-1.1/#aria-valuenow).
+
+    div [ ariaValueNow 4, role "progressbar" ] []
+
+-}
+ariaValueNow : Float -> Attribute msg
+ariaValueNow =
+    floatAttribute "aria-valuenow"
 
 
 {-| An attribute to support the role classification of elements.
