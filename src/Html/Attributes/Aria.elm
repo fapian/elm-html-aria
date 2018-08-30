@@ -61,9 +61,10 @@ boolAttribute : String -> Bool -> Attribute msg
 boolAttribute name val =
     attribute name (JE.encode 0 <| JE.bool val)
 
+
 floatAttribute : String -> Float -> Attribute msg
 floatAttribute name val =
-    attribute name (toString val)
+    attribute name (String.fromFloat val)
 
 
 {-| Identifies the currently active descendant of a composite widget.
