@@ -11,6 +11,7 @@ module Html.Attributes.Aria
         , ariaLabel
         , ariaLabelledby
         , ariaLive
+        , ariaOrientation
         , ariaPressed
         , ariaReadonly
         , ariaRequired
@@ -42,6 +43,7 @@ module Html.Attributes.Aria
 @docs ariaLabel
 @docs ariaLabelledby
 @docs ariaLive
+@docs ariaOrientation
 @docs ariaPressed
 @docs ariaReadonly
 @docs ariaRequired
@@ -187,6 +189,14 @@ See the [official specs](https://www.w3.org/TR/wai-aria-1.1/#aria-live).
 ariaLive : String -> Attribute msg
 ariaLive =
     attribute "aria-live"
+
+
+{-| Indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.
+See the [official specs](https://www.w3.org/TR/wai-aria-1.1/#aria-orientation).
+-}
+ariaOrientation : String -> Attribute msg
+ariaOrientation =
+    attribute "aria-orientation"
 
 
 {-| Indicates the current "pressed" state of toggle buttons.
