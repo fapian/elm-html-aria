@@ -1,25 +1,26 @@
-module Html.Attributes.Aria
-    exposing
-        ( ariaActiveDescendant
-        , ariaChecked
-        , ariaControls
-        , ariaDescribedby
-        , ariaDisabled
-        , ariaExpanded
-        , ariaHasPopup
-        , ariaHidden
-        , ariaLabel
-        , ariaLabelledby
-        , ariaLive
-        , ariaPressed
-        , ariaReadonly
-        , ariaRequired
-        , ariaSelected
-        , ariaValueMax
-        , ariaValueMin
-        , ariaValueNow
-        , role
-        )
+module Html.Attributes.Aria exposing
+    ( role
+    , ariaActiveDescendant
+    , ariaChecked
+    , ariaControls
+    , ariaCurrent
+    , ariaDescribedby
+    , ariaDisabled
+    , ariaExpanded
+    , ariaHasPopup
+    , ariaHidden
+    , ariaLabel
+    , ariaLabelledby
+    , ariaLive
+    , ariaPressed
+    , ariaReadonly
+    , ariaRequired
+    , ariaSelected
+    , ariaValueMax
+    , ariaValueMin
+    , ariaValueNow
+    , AriaItem(..)
+    )
 
 {-| Additional attributes for html
 
@@ -34,6 +35,7 @@ module Html.Attributes.Aria
 @docs ariaActiveDescendant
 @docs ariaChecked
 @docs ariaControls
+@docs ariaCurrent
 @docs ariaDescribedby
 @docs ariaDisabled
 @docs ariaExpanded
@@ -275,3 +277,50 @@ See the [official specs](https://www.w3.org/TR/role-attribute).
 role : String -> Attribute msg
 role =
     attribute "role"
+
+
+type AriaItem
+    = CurrentPage
+    | CurrentStep
+    | CurrentLocation
+    | CurrentDate
+    | CurrentTime
+    | CurrentBoolean Bool
+    | CurrentOther String
+
+
+{-| Indicates the element that represents the current item within a container or set of related elements.
+See the [official specs](https://www.w3.org/TR/wai-aria-1.1/#aria-current).
+
+    div [ ariaValueNow 4, role "progressbar" ] []
+
+-}
+ariaCurrent : AriaItem -> Attribute msg
+ariaCurrent item =
+    attribute "aria-current"
+        (case item of
+            CurrentPage ->
+                "page"
+
+            CurrentStep ->
+                "step"
+
+            CurrentLocation ->
+                "location"
+
+            CurrentDate ->
+                "date"
+
+            CurrentTime ->
+                "time"
+
+            CurrentBoolean b ->
+                if b then
+                    "true"
+
+                else
+                    "false"
+
+            CurrentOther s ->
+                s
+        )
